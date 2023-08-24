@@ -1,0 +1,2 @@
+SELECT Title FROM albums
+WHERE ArtistId in (SELECT ArtistId FROM artists WHERE name like 'deep purple')

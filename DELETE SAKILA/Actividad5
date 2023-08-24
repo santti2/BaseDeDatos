@@ -1,0 +1,4 @@
+DELETE FROM film_actor WHERE actor_id =
+ (SELECT actor_id FROM actor WHERE first_name like 'Matthew%') and (SELECT actor_id FROM actor WHERE last_name like 'Johansson%');
+DELETE FROM actor WHERE actor_id =
+ (SELECT actor_id FROM actor WHERE first_name like 'Matthew%') and (SELECT actor	_id FROM actor WHERE last_name like 'Johansson%')

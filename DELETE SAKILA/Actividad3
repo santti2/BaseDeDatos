@@ -1,0 +1,2 @@
+DELETE FROM country where country_id not in
+	(SELECT country_id from city)

@@ -1,0 +1,5 @@
+SELECT max(total) as duracion,Title FROM albums a
+(SELECT sum(Milliseconds) as total, Title as nombre
+FROM tracks t JOIN albums a 
+on t.AlbumId = a.AlbumId
+GROUP by a.AlbumId)

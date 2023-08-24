@@ -1,0 +1,2 @@
+SELECT avg(total) as PROMEDIO FROM (SELECT sum(Quantity * unitPrice) as total FROM invoice_items
+group by InvoiceId)

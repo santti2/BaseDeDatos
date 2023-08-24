@@ -1,0 +1,3 @@
+SELECT name,Milliseconds, AlbumId FROM tracks
+WHERE AlbumId in (SELECT AlbumId FROM albums 
+WHERE ArtistId = (SELECT ArtistId FROM artists WHERE name = "Deep Purple"))

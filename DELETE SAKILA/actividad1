@@ -1,0 +1,2 @@
+DELETE FROM language where language_id  NOT IN 
+	(SELECT language_id from film)
