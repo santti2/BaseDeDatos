@@ -1,0 +1,2 @@
+INSERT INTO post (author_id, title, body)
+VALUES(2, "espi", "asdasdasdasd");
