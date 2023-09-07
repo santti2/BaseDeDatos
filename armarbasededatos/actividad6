@@ -1,0 +1,4 @@
+UPDATE post SET
+title = "aguante messi",
+body = ""
+WHERE author_id in (SELECT id from user WHERE username like "%santiago%")
