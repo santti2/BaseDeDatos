@@ -1,0 +1,2 @@
+INSERT INTO user(username, password)
+VALUES ("juan", (SELECT password FROM user WHERE username = "santiago"))
