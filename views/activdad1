@@ -1,0 +1,3 @@
+create view rating as 
+Select count (title), rating from film
+group by rating

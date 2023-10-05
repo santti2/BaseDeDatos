@@ -1,0 +1,9 @@
+Create view contador as
+Select count (f.title) as contador, a.first_name,a.last_name  from film f
+JOIN film_actor i
+ON f.film_id = i.film_id
+JOIN actor a 
+ON i.actor_id = a.actor_id
+group by a.actor_id
+ORDER BY contador DESC
+LIMIT 10

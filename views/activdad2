@@ -1,0 +1,5 @@
+create view categoria as
+Select count (title), c.name as nombre from film f
+Join film_category i ON f.film_id = i.film_id
+JOIN category c ON i.category_id = c.category_id
+group by c.name
