@@ -1,0 +1,5 @@
+CREATE VIEW Encargados AS
+SELECT s.first_name, s.last_name, a.address, c.country, ci.city FROM staff s
+JOIN address a ON s.address_id = a.address_id
+JOIN city ci ON a.city_id = ci.city_id
+JOIN country c ON ci.country_id = c.country_id

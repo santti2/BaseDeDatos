@@ -1,0 +1,9 @@
+CREATE VIEW ciudades AS
+SELECT a.address_id, a.address, co.country, c.city FROM address a
+JOIN city c ON a.city_id = c.city_id
+JOIN country co ON c.country_id = co.country_id;
+
+SELECT COUNT(film_id) AS cant_peli,c.address, c.city,c.country FROM inventory i
+JOIN store s ON i.store_id = s.store_id
+JOIN ciudades c ON s.address_id = c.address_id
+group by s.store_id, c.address,c.city,c.country

@@ -1,0 +1,10 @@
+CREATE VIEW peliculas AS
+SELECT f.title, a.address, ci.city, c.country FROM film f
+JOIN inventory i ON f.film_id = i.inventory_id
+JOIN rental r ON i.inventory_id = r.inventory_id
+JOIN store s ON i.store_id = s.store_id 
+JOIN address a ON s.address_id = a.address_id
+JOIN city ci ON a.city_id = ci.city_id
+JOIN country c ON ci.country_id = c.country_id
+WHERE return_date IS NULL
+GROUP by ci.city, f.title, a.address, c.country

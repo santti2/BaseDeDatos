@@ -1,0 +1,5 @@
+CREATE VIEW DURACIONENTRE1HORAY2 as
+select f.title, f.rating, f.length as tiempo, c.name as nombre from film f 
+JOIN film_category fc on fc.film_id = f.film_id
+JOIN category c on fc.category_id = c.category_id
+JOIN language l on f.language_id = l.language_id

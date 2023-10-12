@@ -1,0 +1,5 @@
+CREATE VIEW promedioPorCategoria As
+SELECT avg(f.rental_rate) as promedioxpeli, c.name from film f
+JOIN film_category fc on f.film_id = fc.film_id
+JOIN category c ON fc.category_id = c.category_id
+group by c.name
