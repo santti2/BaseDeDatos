@@ -1,0 +1,43 @@
+//actividad 1 
+    pude levantarlo en postgres me tuve que pasar a sqllite
+    porque el postgres crasheaba
+
+/ actividad 2
+
+CREATE view duracionalquiler as
+SELECT f.title, c.first_name, c.last_name,r.rental_date FROM film f
+JOIN inventory i USING (film_id)
+JOIN rental r USING (inventory_id)
+JOIN customer c USING (customer_id)
+
+
+// actividad 3
+
+INSERT INTO film (film_id, title,release_year,language_id,last_update) VALUES (1002,'Spiderhead',2022,1,"")
+
+INSERT INTO actor(first_name,last_name,actor_id) VALUES("Chris","Hemsworth",1001)
+
+INSERT INTO film_actor(actor_id,film_id,last_update) VALUES(1001,1002,"")
+
+INSERT INTO film (film_id, title,release_year,language_id,last_update) VALUES (1003,'Men in Black',2019,1,"")
+
+INSERT INTO film_actor(actor_id,film_id,last_update) VALUES(1001,1003,"")
+
+INSERT INTO film (film_id, title,release_year,language_id,last_update) VALUES (1004,'En en el corazon del mar',2015,1,"")
+
+INSERT INTO film_actor(actor_id,film_id,last_update) VALUES(1001,1004,"")
+
+// actividad 4
+
+UPDATE customer
+set email = NULL
+ 
+ //actividad 5
+
+   UPDATE staff
+   SET username = last_name,
+   password = '1234';
+
+//  actividad 7
+
+DELETE FROM customer WHERE customer_id NOT IN (SELECT DISTINCT customer_id FROM rental)
